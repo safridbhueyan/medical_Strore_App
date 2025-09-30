@@ -1,6 +1,6 @@
 class AppImages {
-  static const String animalPath = "assets/images/animals";
-  static const String screenBackground = 'assets/images/screen_background.png';
+  static const String path = "assets/images";
+  static const String pracetamol1 = '$path/Rectangle 3.png';
   static const String screenBackgroundSvg =
       'assets/images/screen_background.svg';
 
