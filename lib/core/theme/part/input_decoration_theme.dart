@@ -9,11 +9,11 @@ class AppInputDecorationTheme {
   static InputDecorationTheme inputDecorationTheme = InputDecorationTheme(
     contentPadding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 9.h),
     filled: true,
-    fillColor: Colors.transparent,
+    fillColor: AppColors.onPrimary.withValues(alpha: 0.1),
     hintStyle: GoogleFonts.roboto(
       fontSize: 16.sp,
-      fontWeight: FontWeight.w500,
-      color: Color(0xff4E5D7899).withValues(alpha: .8),
+      fontWeight: FontWeight.w300,
+      color: AppColors.secondary,
     ),
     labelStyle: GoogleFonts.poppins(
       fontSize: 16.sp,
