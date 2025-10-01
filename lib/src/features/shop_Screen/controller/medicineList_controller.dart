@@ -3,7 +3,7 @@ import 'package:medical_store_app/core/constant/images.dart';
 import 'package:medical_store_app/src/features/shop_Screen/model/medicine_model.dart';
 
 class MedicinelistController extends GetxController {
-  var model = [
+  RxList<MedicineModel> medicine = <MedicineModel>[
     MedicineModel(
       name: "Paracetamol",
       power: "500 mg",
@@ -12,6 +12,7 @@ class MedicinelistController extends GetxController {
       discountedPrice: "৳ 7",
       img: AppImages.pracetamol1,
       id: 1,
+      catagory: 'Health Kit',
     ),
     MedicineModel(
       name: "Paracetamol",
@@ -21,6 +22,7 @@ class MedicinelistController extends GetxController {
       discountedPrice: "৳ 7",
       img: AppImages.pracetamol2,
       id: 2,
+      catagory: 'Health Kit',
     ),
     MedicineModel(
       name: "Paracetamol",
@@ -30,33 +32,37 @@ class MedicinelistController extends GetxController {
       discountedPrice: "৳ 7",
       img: AppImages.pracetamol3,
       id: 3,
+      catagory: 'Health Kit',
     ),
     MedicineModel(
-      name: "Paracetamol",
+      name: "Diabetics Set",
       power: "500 mg",
       quantity: '10 Tablets',
       price: "৳ 7",
       discountedPrice: "৳ 7",
-      img: AppImages.pracetamol1,
+      img: AppImages.diabeticKit,
       id: 4,
+      catagory: 'Diabetics Kit',
     ),
     MedicineModel(
-      name: "Paracetamol",
+      name: "Stethoscope",
       power: "500 mg",
       quantity: '10 Tablets',
       price: "৳ 7",
       discountedPrice: "৳ 7",
-      img: AppImages.pracetamol1,
+      img: AppImages.stetoscope,
       id: 5,
+      catagory: 'Health Kit',
     ),
     MedicineModel(
-      name: "Paracetamol",
+      name: "XYZ",
       power: "500 mg",
       quantity: '10 Tablets',
       price: "৳ 7",
       discountedPrice: "৳ 7",
-      img: AppImages.pracetamol1,
+      img: AppImages.injection,
       id: 6,
+      catagory: 'Health Kit',
     ),
     MedicineModel(
       name: "Paracetamol",
@@ -64,44 +70,63 @@ class MedicinelistController extends GetxController {
       quantity: '10 Tablets',
       price: "৳ 7",
       discountedPrice: "৳ 7",
-      img: AppImages.pracetamol1,
+      img: AppImages.napa,
       id: 7,
+      catagory: 'Health Kit',
     ),
     MedicineModel(
-      name: "Paracetamol",
+      name: "Travel first Aid Box",
       power: "500 mg",
       quantity: '10 Tablets',
       price: "৳ 7",
       discountedPrice: "৳ 7",
-      img: AppImages.pracetamol1,
-      id: 8,
+      img: AppImages.medkit,
+      id: 12,
+      catagory: 'Health Kit',
     ),
     MedicineModel(
-      name: "Paracetamol",
+      name: "Chicco Baby Set",
       power: "500 mg",
       quantity: '10 Tablets',
       price: "৳ 7",
       discountedPrice: "৳ 7",
-      img: AppImages.pracetamol1,
+      img: AppImages.babyoil,
       id: 9,
+      catagory: 'Baby Care',
     ),
     MedicineModel(
-      name: "Paracetamol",
+      name: "Baby Care",
       power: "500 mg",
       quantity: '10 Tablets',
       price: "৳ 7",
       discountedPrice: "৳ 7",
-      img: AppImages.pracetamol1,
+      img: AppImages.babyToy,
       id: 10,
+      catagory: 'Baby Care',
     ),
     MedicineModel(
-      name: "Paracetamol",
+      name: "Baby Care",
       power: "500 mg",
       quantity: '10 Tablets',
       price: "৳ 7",
       discountedPrice: "৳ 7",
-      img: AppImages.pracetamol1,
+      img: AppImages.babyToy2,
       id: 11,
+      catagory: 'Baby Care',
+    ),
+    MedicineModel(
+      name: "Baby Care",
+      power: "500 mg",
+      quantity: '10 Tablets',
+      price: "৳ 7",
+      discountedPrice: "৳ 7",
+      img: AppImages.babyoil,
+      id: 13,
+      catagory: 'Baby Care',
     ),
   ].obs;
+
+  List<MedicineModel> getByCategory(String category) {
+    return medicine.where((m) => m.catagory == category).toList();
+  }
 }

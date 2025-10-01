@@ -19,8 +19,8 @@ class AppColors {
   static const Color textColor = Color(0xff203225);
   static const Color onError = Color(0xffEB3D4D);
   static const Color surface = Color(0xff161721);
-  static const Color onSurface = Color(0xffFFF6E4);
-  static const Color bottomNavBarBackground = Color(0xff212432);
+  static const Color onSurface = Color(0xffFFFFFF);
+  static const Color black = Color(0xff000000);
   static const Color secondaryTextColor = Color(0xff777980);
   static const Color deActiveTextColor = Color(0xff777980);
   static const Color primaryContainer = Color(0xff191C31);
@@ -29,7 +29,7 @@ class AppColors {
   static const Color buttonAvtiveColor = Color(0xff4847F1);
   static const Color fillcolor = Color(0xff203225);
   static const Color fillcolorTwo = Color(0xff303245);
-  static const Color subTextColor = Color(0xff1A9882);
+  static const Color subTextColor = Color(0xff4C524B);
   static const Color containerTextColor = Color(0xffD2D2D5);
   static const Color columnHeadre = Color(0xff1E2943);
   static const Color resetbuttonColor = Color(0xff222539);

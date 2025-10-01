@@ -7,6 +7,7 @@ import 'package:medical_store_app/core/constant/padding.dart';
 import 'package:medical_store_app/core/theme/theme_extension/app_colors.dart';
 import 'package:medical_store_app/src/features/shop_Screen/controller/tabBar_controller.dart';
 import 'package:medical_store_app/src/features/shop_Screen/view/widgets/appBar.dart';
+import 'package:medical_store_app/src/features/shop_Screen/view/widgets/healthKit_screen.dart';
 
 class ShopScreen extends StatelessWidget {
   const ShopScreen({super.key});
@@ -71,7 +72,7 @@ class ShopScreen extends StatelessWidget {
                 physics: NeverScrollableScrollPhysics(),
                 controller: controller.tabController,
                 children: [
-                  Center(child: Text("All Products")),
+                  Scaffold(body: HealthkitScreen()),
                   Center(child: Text("Medicines")),
                   Center(child: Text("Medicines")),
                   Center(child: Text("Equipments")),
