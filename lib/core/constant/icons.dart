@@ -10,4 +10,6 @@ class AppIcons {
   static const String cartAddIcon = '$iconPath/shopping-cart-add-02 (1).svg';
   static const String deliveryIcon = '$iconPath/truck-delivery.svg';
   static const String uIDIcon = '$iconPath/user-id-verification.svg';
+  static const String leftArrow = '$iconPath/arrow_left.svg';
+  static const String rightArrow = '$iconPath/arrow_right.svg';
 }

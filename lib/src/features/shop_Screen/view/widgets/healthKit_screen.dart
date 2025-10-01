@@ -36,7 +36,6 @@ class HealthkitScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 15.h),
-
             CustomListTile(category: "Health Kit"),
             SizedBox(height: 32.h),
             Padding(

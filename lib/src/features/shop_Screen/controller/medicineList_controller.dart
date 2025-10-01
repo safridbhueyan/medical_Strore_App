@@ -149,4 +149,8 @@ class MedicinelistController extends GetxController {
   List<MedicineModel> getByCategory(String category) {
     return medicine.where((m) => m.catagory == category).toList();
   }
+
+  MedicineModel? getByID(int id) {
+    return medicine.firstWhereOrNull((m) => m.id == id);
+  }
 }

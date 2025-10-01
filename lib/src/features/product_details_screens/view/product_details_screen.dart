@@ -1,0 +1,65 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:medical_store_app/core/constant/icons.dart';
+import 'package:medical_store_app/core/constant/padding.dart';
+import 'package:medical_store_app/src/features/shop_Screen/controller/medicineList_controller.dart';
+import 'package:medical_store_app/src/features/shop_Screen/view/widgets/appBar.dart';
+
+class ProductDetailsScreen extends StatelessWidget {
+  final int id;
+  final MedicinelistController controller = Get.put(MedicinelistController());
+  ProductDetailsScreen({super.key, required this.id});
+
+  @override
+  Widget build(BuildContext context) {
+    final data = controller.getByID(id);
+    return Scaffold(
+      body: Column(
+        children: [
+          SizedBox(height: 40.h),
+          Padding(
+            padding: AppPadding.screenHorizontal,
+            child: Appbar(title: "", onTap: () {}),
+          ),
+          SizedBox(height: 22.h),
+          Padding(
+            padding: AppPadding.screenHorizontal,
+            child: ClipRRect(
+              borderRadius: BorderRadiusGeometry.circular(10.r),
+              child: Stack(
+                children: [
+                  Image.asset(data!.img),
+                  Positioned(
+                    top: 5,
+                    bottom: 5,
+                    left: 0,
+                    right: 0,
+                    child: Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            // sliding picture logic will be here
+                          },
+                          child: SvgPicture.asset(AppIcons.rightArrow),
+                        ),
+                        Spacer(),
+                        GestureDetector(
+                          onTap: () {
+                            // same sliding logic will go here
+                          },
+                          child: SvgPicture.asset(AppIcons.leftArrow),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

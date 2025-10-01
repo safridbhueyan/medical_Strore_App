@@ -2,7 +2,7 @@ class AppImages {
   static const String path = "assets/images";
   static const String pracetamol1 = '$path/Rectangle 3.png';
   static const String pracetamol2 = '$path/Rectangle 5 (1).png';
-  static const String pracetamol3 = '$path/Rectangle 5 (2).png';
+  static const String pracetamol3 = '$path/Rectangle 5.png';
   static const String stetoscope = '$path/Rectangle 3 (4).png';
   static const String injection = '$path/Rectangle 5 (3).png';
   static const String medkit = '$path/Rectangle 5 (4).png';

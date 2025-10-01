@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:medical_store_app/core/constant/icons.dart';
 import 'package:medical_store_app/core/theme/theme_extension/app_colors.dart';
 
@@ -16,7 +17,12 @@ class Appbar extends StatelessWidget {
     final style = Theme.of(context).textTheme;
     return Row(
       children: [
-        SvgPicture.asset(AppIcons.backArrow),
+        GestureDetector(
+          onTap: () {
+            Get.back();
+          },
+          child: SvgPicture.asset(AppIcons.backArrow),
+        ),
         SizedBox(width: 12.w),
         Text(
           title,
