@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:medical_store_app/src/features/shop_Screen/controller/medicineList_controller.dart';
-import 'package:medical_store_app/src/features/shop_Screen/view/widgets/custom_Contaier.dart';
+import 'package:medical_store_app/src/features/shop_Screen/view/widgets/custom_list_tile.dart';
 
 class HealthkitScreen extends StatelessWidget {
   final MedicinelistController controller = Get.put(MedicinelistController());
@@ -10,29 +10,18 @@ class HealthkitScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(
-      () => SizedBox(
-        height: 177.h,
-        child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: controller.getByCategory("Health Kit").length,
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: EdgeInsets.only(
-                left: 18.w,
-                right: index == controller.medicine.length - 1 ? 18.w : 0,
-              ),
-              child: CustomContaier(
-                isDiscountOn: false,
-                img: controller.medicine[index].img,
-                name: controller.medicine[index].name,
-                power: controller.medicine[index].power,
-                quantity: controller.medicine[index].quantity,
-                price: controller.medicine[index].price,
-                onTap: () {},
-              ),
-            );
-          },
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: 20.h),
+            CustomListTile(category: "Health Kit"),
+            SizedBox(height: 20.h),
+            CustomListTile(category: "Diabetics Kit"),
+            SizedBox(height: 20.h),
+            CustomListTile(category: 'Baby Care'),
+            SizedBox(height: 200.h),
+          ],
         ),
       ),
     );

@@ -6,7 +6,7 @@ class AppImages {
   static const String stetoscope = '$path/Rectangle 3 (4).png';
   static const String injection = '$path/Rectangle 5 (3).png';
   static const String medkit = '$path/Rectangle 5 (4).png';
-  static const String diabeticKit = '$path/Rectangle 5 (6).png';
+  static const String diabeticKit = '$path/kit.png';
   static const String babyoil = '$path/Rectangle 3 (1).png';
   static const String babyToy = '$path/Rectangle 5 (7).png';
   static const String babyToy2 = '$path/Rectangle 5 (8).png';

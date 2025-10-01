@@ -72,7 +72,7 @@ class ShopScreen extends StatelessWidget {
                 physics: NeverScrollableScrollPhysics(),
                 controller: controller.tabController,
                 children: [
-                  Scaffold(body: HealthkitScreen()),
+                  HealthkitScreen(),
                   Center(child: Text("Medicines")),
                   Center(child: Text("Medicines")),
                   Center(child: Text("Equipments")),
