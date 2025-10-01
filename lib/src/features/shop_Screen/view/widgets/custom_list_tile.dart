@@ -8,8 +8,9 @@ import 'package:medical_store_app/src/features/shop_Screen/view/widgets/custom_C
 
 class CustomListTile extends StatelessWidget {
   final String category;
+  final int? count;
   final MedicinelistController controller = Get.put(MedicinelistController());
-  CustomListTile({super.key, required this.category});
+  CustomListTile({super.key, required this.category, this.count});
   @override
   Widget build(BuildContext context) {
     return Obx(
@@ -17,8 +18,9 @@ class CustomListTile extends StatelessWidget {
         height: 177.h,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemCount: controller.getByCategory(category).length,
+          itemCount: count ?? controller.getByCategory(category).length,
           itemBuilder: (context, index) {
+            final controllers = controller.getByCategory(category);
             return Padding(
               padding: EdgeInsets.only(
                 left: 18.w,
@@ -26,11 +28,11 @@ class CustomListTile extends StatelessWidget {
               ),
               child: CustomContaier(
                 isDiscountOn: false,
-                img: controller.medicine[index].img,
-                name: controller.medicine[index].name,
-                power: controller.medicine[index].power,
-                quantity: controller.medicine[index].quantity,
-                price: controller.medicine[index].price,
+                img: controllers[index].img,
+                name: controllers[index].name,
+                power: controllers[index].power,
+                quantity: controllers[index].quantity,
+                price: controllers[index].price,
                 onTap: () {},
               ),
             );

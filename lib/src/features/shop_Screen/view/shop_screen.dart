@@ -17,14 +17,17 @@ class ShopScreen extends StatelessWidget {
     final style = Theme.of(context).textTheme;
     final TabbarControllerX controller = Get.put(TabbarControllerX());
     return Scaffold(
-      body: Padding(
-        padding: AppPadding.screenHorizontal,
-        child: Column(
-          children: [
-            SizedBox(height: 40.h),
-            Appbar(title: "Shop", onTap: () {}),
-            SizedBox(height: 22.h),
-            TextFormField(
+      body: Column(
+        children: [
+          SizedBox(height: 40.h),
+          Padding(
+            padding: AppPadding.screenHorizontal,
+            child: Appbar(title: "Shop", onTap: () {}),
+          ),
+          SizedBox(height: 22.h),
+          Padding(
+            padding: AppPadding.screenHorizontal,
+            child: TextFormField(
               style: style.bodyMedium!.copyWith(color: AppColors.onSecondary),
               decoration: InputDecoration(
                 hintText: "Search",
@@ -34,8 +37,11 @@ class ShopScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 30.h),
-            Align(
+          ),
+          SizedBox(height: 30.h),
+          Padding(
+            padding: AppPadding.screenHorizontal,
+            child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
                 "Best Selling",
@@ -46,41 +52,41 @@ class ShopScreen extends StatelessWidget {
                 textAlign: TextAlign.left,
               ),
             ),
-            SizedBox(height: 12.h),
-            TabBar(
+          ),
+          SizedBox(height: 12.h),
+          TabBar(
+            controller: controller.tabController,
+            labelColor: AppColors.textColor,
+            unselectedLabelColor: AppColors.fillcolorTwo,
+            indicatorColor: AppColors.textColor.withValues(alpha: 0.8),
+            labelStyle: style.bodyMedium!.copyWith(fontSize: 15.sp),
+            unselectedLabelStyle: style.bodySmall,
+            textScaler: TextScaler.linear(1),
+            isScrollable: true,
+            labelPadding: EdgeInsets.only(right: 40.w),
+            indicatorWeight: 3,
+            indicatorSize: TabBarIndicatorSize.label,
+            dividerColor: Colors.transparent,
+            tabs: [
+              Tab(text: "Health Kit"),
+              Tab(text: "Diabetics Kit"),
+              Tab(text: "Baby Care"),
+              Tab(text: "Pressure"),
+            ],
+          ),
+          Expanded(
+            child: TabBarView(
+              physics: NeverScrollableScrollPhysics(),
               controller: controller.tabController,
-              labelColor: AppColors.textColor,
-              unselectedLabelColor: AppColors.fillcolorTwo,
-              indicatorColor: AppColors.textColor.withValues(alpha: 0.8),
-              labelStyle: style.bodyMedium!.copyWith(fontSize: 15.sp),
-              unselectedLabelStyle: style.bodySmall,
-              textScaler: TextScaler.linear(1),
-              isScrollable: true,
-              labelPadding: EdgeInsets.only(right: 40.w),
-              indicatorWeight: 3,
-              indicatorSize: TabBarIndicatorSize.label,
-              dividerColor: Colors.transparent,
-              tabs: [
-                Tab(text: "Health Kit"),
-                Tab(text: "Diabetics Kit"),
-                Tab(text: "Baby Care"),
-                Tab(text: "Pressure"),
+              children: [
+                HealthkitScreen(),
+                Center(child: Text("Medicines")),
+                Center(child: Text("Medicines")),
+                Center(child: Text("Equipments")),
               ],
             ),
-            Expanded(
-              child: TabBarView(
-                physics: NeverScrollableScrollPhysics(),
-                controller: controller.tabController,
-                children: [
-                  HealthkitScreen(),
-                  Center(child: Text("Medicines")),
-                  Center(child: Text("Medicines")),
-                  Center(child: Text("Equipments")),
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
