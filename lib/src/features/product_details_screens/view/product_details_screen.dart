@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:medical_store_app/core/constant/icons.dart';
 import 'package:medical_store_app/core/constant/padding.dart';
+import 'package:medical_store_app/src/features/product_details_screens/view/widgets/row_images.dart';
 import 'package:medical_store_app/src/features/shop_Screen/controller/medicineList_controller.dart';
 import 'package:medical_store_app/src/features/shop_Screen/view/widgets/appBar.dart';
 
@@ -57,6 +58,11 @@ class ProductDetailsScreen extends StatelessWidget {
                 ],
               ),
             ),
+          ),
+          11.h.verticalSpace,
+          Padding(
+            padding: AppPadding.screenHorizontal,
+            child: RowImages(id: id),
           ),
         ],
       ),
