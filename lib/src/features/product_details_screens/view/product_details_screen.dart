@@ -4,7 +4,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:medical_store_app/core/constant/icons.dart';
 import 'package:medical_store_app/core/constant/padding.dart';
+import 'package:medical_store_app/core/theme/theme_extension/app_colors.dart';
 import 'package:medical_store_app/src/features/product_details_screens/view/widgets/row_images.dart';
+import 'package:medical_store_app/src/features/product_details_screens/view/widgets/text_title.dart';
 import 'package:medical_store_app/src/features/shop_Screen/controller/medicineList_controller.dart';
 import 'package:medical_store_app/src/features/shop_Screen/view/widgets/appBar.dart';
 
@@ -16,18 +18,17 @@ class ProductDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final data = controller.getByID(id);
+    final style = Theme.of(context).textTheme;
+
     return Scaffold(
-      body: Column(
-        children: [
-          SizedBox(height: 40.h),
-          Padding(
-            padding: AppPadding.screenHorizontal,
-            child: Appbar(title: "", onTap: () {}),
-          ),
-          SizedBox(height: 22.h),
-          Padding(
-            padding: AppPadding.screenHorizontal,
-            child: ClipRRect(
+      body: Padding(
+        padding: AppPadding.screenHorizontal,
+        child: Column(
+          children: [
+            SizedBox(height: 40.h),
+            Appbar(title: "", onTap: () {}),
+            SizedBox(height: 22.h),
+            ClipRRect(
               borderRadius: BorderRadiusGeometry.circular(10.r),
               child: Stack(
                 children: [
@@ -58,13 +59,19 @@ class ProductDetailsScreen extends StatelessWidget {
                 ],
               ),
             ),
-          ),
-          11.h.verticalSpace,
-          Padding(
-            padding: AppPadding.screenHorizontal,
-            child: RowImages(id: id),
-          ),
-        ],
+            11.h.verticalSpace,
+            RowImages(id: id),
+            16.h.verticalSpace,
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                data.name,
+                style: style.titleSmall!.copyWith(color: AppColors.textColor),
+              ),
+            ),
+            TextTitle(),
+          ],
+        ),
       ),
     );
   }

@@ -12,4 +12,5 @@ class AppIcons {
   static const String uIDIcon = '$iconPath/user-id-verification.svg';
   static const String leftArrow = '$iconPath/arrow_left.svg';
   static const String rightArrow = '$iconPath/arrow_right.svg';
+  static const String polygon = '$iconPath/Polygon.svg';
 }
