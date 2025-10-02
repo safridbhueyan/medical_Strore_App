@@ -48,6 +48,7 @@ class RowSizeTile extends StatelessWidget {
           ),
           14.w.horizontalSpace,
           CustomSizeTile(
+            isAvailable: true,
             title: 'XXL',
             isSelected: controller.isSelected == "XXL",
             onTap: () {
