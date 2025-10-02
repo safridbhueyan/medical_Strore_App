@@ -7,6 +7,7 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:medical_store_app/core/constant/icons.dart';
 import 'package:medical_store_app/core/theme/theme_extension/app_colors.dart';
 import 'package:medical_store_app/src/features/product_details_screens/controller/expension_controller.dart';
+import 'package:medical_store_app/src/features/product_details_screens/view/widgets/custom_discription.dart';
 
 class CustomExpensionTile extends StatelessWidget {
   final ExpensionController controller = Get.put(ExpensionController());
@@ -60,12 +61,15 @@ class CustomExpensionTile extends StatelessWidget {
                 ),
 
                 if (controller.isExpanded.value) ...[
-                  Text(
-                    "• Composition: Paracetamol 500mg",
-                    style: style.bodySmall,
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 19.w,
+                      right: 8.w,
+                      top: 9.h,
+                      bottom: 9.h,
+                    ),
+                    child: CustomDiscription(),
                   ),
-                  Text("• Manufacturer: XYZ Pharma", style: style.bodySmall),
-                  Text("• Expiry Date: 2026-01", style: style.bodySmall),
                 ],
               ],
             ),
