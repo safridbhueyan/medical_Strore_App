@@ -144,6 +144,36 @@ class MedicinelistController extends GetxController {
       id: 13,
       catagory: 'Baby Care',
     ),
+    MedicineModel(
+      name: "Travel first Aid Box",
+      power: "156",
+      quantity: '1 Box',
+      price: "৳ 700",
+      discountedPrice: "৳ 700",
+      img: AppImages.medkit,
+      id: 14,
+      catagory: 'Similar Products',
+    ),
+    MedicineModel(
+      name: "XYZ",
+      power: "1 Box",
+      quantity: '100 pieces',
+      price: "৳ 500",
+      discountedPrice: "৳ 500",
+      img: AppImages.mask,
+      id: 15,
+      catagory: 'Similar Products',
+    ),
+    MedicineModel(
+      name: "Hot Water Pot",
+      power: "RFL",
+      quantity: '1 pcs',
+      price: "৳ 200",
+      discountedPrice: "৳ 200",
+      img: AppImages.redpot,
+      id: 16,
+      catagory: 'Similar Products',
+    ),
   ].obs;
 
   List<MedicineModel> getByCategory(String category) {

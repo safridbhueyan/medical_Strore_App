@@ -12,6 +12,7 @@ import 'package:medical_store_app/src/features/product_details_screens/view/widg
 import 'package:medical_store_app/src/features/product_details_screens/view/widgets/text_title.dart';
 import 'package:medical_store_app/src/features/shop_Screen/controller/medicineList_controller.dart';
 import 'package:medical_store_app/src/features/shop_Screen/view/widgets/appBar.dart';
+import 'package:medical_store_app/src/features/shop_Screen/view/widgets/custom_list_tile.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   final int id;
@@ -110,7 +111,18 @@ class ProductDetailsScreen extends StatelessWidget {
                     CustomExpensionTile(title: 'Product Code', id: 3),
                     2.h.verticalSpace,
                     CustomExpensionTile(title: 'Warranty', id: 4),
-                    2.h.verticalSpace,
+                    40.h.verticalSpace,
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "Similar Products",
+                        style: style.bodyMedium!.copyWith(
+                          color: AppColors.textColor,
+                        ),
+                      ),
+                    ),
+                    15.h.verticalSpace,
+                    CustomListTile(category: 'Similar Products'),
                     SizedBox(height: 200.h),
                   ],
                 ),
