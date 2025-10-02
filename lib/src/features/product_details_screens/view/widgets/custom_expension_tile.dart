@@ -10,9 +10,11 @@ import 'package:medical_store_app/src/features/product_details_screens/controlle
 import 'package:medical_store_app/src/features/product_details_screens/view/widgets/custom_discription.dart';
 
 class CustomExpensionTile extends StatelessWidget {
+  final String title;
+  final int id;
   final ExpensionController controller = Get.put(ExpensionController());
 
-  CustomExpensionTile({super.key});
+  CustomExpensionTile({super.key, required this.title, required this.id});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class CustomExpensionTile extends StatelessWidget {
         curve: Curves.easeInOut,
         child: GestureDetector(
           onTap: () {
-            controller.toggle();
+            controller.toggle(id);
           },
           child: Container(
             decoration: BoxDecoration(
@@ -47,20 +49,21 @@ class CustomExpensionTile extends StatelessWidget {
                   child: Row(
                     children: [
                       Text(
-                        "Specifications",
+                        title,
                         style: style.bodyMedium!.copyWith(
                           color: AppColors.subTextColor,
                         ),
                       ),
                       Spacer(),
-                      isExpended == true
+                      controller.id.value == id && controller.isExpanded.value
                           ? SvgPicture.asset(AppIcons.up)
                           : SvgPicture.asset(AppIcons.down),
                     ],
                   ),
                 ),
 
-                if (controller.isExpanded.value) ...[
+                if (controller.id.value == id &&
+                    controller.isExpanded.value) ...[
                   Padding(
                     padding: EdgeInsets.only(
                       left: 19.w,
