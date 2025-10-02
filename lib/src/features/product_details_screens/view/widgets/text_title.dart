@@ -19,7 +19,7 @@ class TextTitle extends StatelessWidget {
         GestureDetector(
           onTap: () {},
           child: Text(
-            "ABC Pharma",
+            "ABC Pharma.",
             style: style.labelLarge!.copyWith(color: AppColors.onPrimary),
           ),
         ),
