@@ -6,7 +6,9 @@ import 'package:medical_store_app/core/constant/icons.dart';
 import 'package:medical_store_app/core/constant/padding.dart';
 import 'package:medical_store_app/core/theme/theme_extension/app_colors.dart';
 import 'package:medical_store_app/src/features/product_details_screens/view/widgets/color_selection_tile.dart';
+import 'package:medical_store_app/src/features/product_details_screens/view/widgets/custom_size_tile.dart';
 import 'package:medical_store_app/src/features/product_details_screens/view/widgets/row_images.dart';
+import 'package:medical_store_app/src/features/product_details_screens/view/widgets/row_size_tile.dart';
 import 'package:medical_store_app/src/features/product_details_screens/view/widgets/text_title.dart';
 import 'package:medical_store_app/src/features/shop_Screen/controller/medicineList_controller.dart';
 import 'package:medical_store_app/src/features/shop_Screen/view/widgets/appBar.dart';
@@ -89,6 +91,7 @@ class ProductDetailsScreen extends StatelessWidget {
               ),
             ),
             10.h.verticalSpace,
+            RowSizeTile(),
           ],
         ),
       ),
