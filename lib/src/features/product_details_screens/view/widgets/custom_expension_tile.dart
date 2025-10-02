@@ -19,7 +19,6 @@ class CustomExpensionTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final style = Theme.of(context).textTheme;
-    final isExpended = controller.isExpanded;
     return Obx(
       () => AnimatedSize(
         duration: const Duration(milliseconds: 300),

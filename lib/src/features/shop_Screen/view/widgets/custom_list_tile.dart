@@ -1,9 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_instance/get_instance.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:medical_store_app/src/features/product_details_screens/view/product_details_screen.dart';
 import 'package:medical_store_app/src/features/shop_Screen/controller/medicineList_controller.dart';
 import 'package:medical_store_app/src/features/shop_Screen/view/widgets/custom_Contaier.dart';
@@ -36,6 +33,7 @@ class CustomListTile extends StatelessWidget {
                 quantity: controllers[index].quantity,
                 price: controllers[index].price,
                 onTap: () {
+                  debugPrint("\n\n\n ${controllers[index].id}\n\n\n\n");
                   Get.to(() => ProductDetailsScreen(id: controllers[index].id));
                 },
               ),
