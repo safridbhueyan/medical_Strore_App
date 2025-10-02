@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:medical_store_app/core/constant/icons.dart';
 import 'package:medical_store_app/core/constant/padding.dart';
 import 'package:medical_store_app/core/theme/theme_extension/app_colors.dart';
+import 'package:medical_store_app/src/features/cart_screen/view/cart_screen.dart';
 import 'package:medical_store_app/src/features/shop_Screen/controller/tabBar_controller.dart';
 import 'package:medical_store_app/src/features/shop_Screen/view/widgets/appBar.dart';
 import 'package:medical_store_app/src/features/shop_Screen/view/widgets/healthKit_screen.dart';
@@ -22,7 +23,12 @@ class ShopScreen extends StatelessWidget {
           SizedBox(height: 40.h),
           Padding(
             padding: AppPadding.screenHorizontal,
-            child: Appbar(title: "Shop", onTap: () {}),
+            child: Appbar(
+              title: "Shop",
+              onTap: () {
+                Get.to(CartScreen());
+              },
+            ),
           ),
           SizedBox(height: 22.h),
           Padding(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:medical_store_app/core/constant/icons.dart';
 import 'package:medical_store_app/core/theme/theme_extension/app_colors.dart';
 
@@ -14,7 +15,12 @@ class CustomAppbar extends StatelessWidget {
 
     return Row(
       children: [
-        SvgPicture.asset(AppIcons.backArrow),
+        GestureDetector(
+          onTap: () {
+            Get.back();
+          },
+          child: SvgPicture.asset(AppIcons.backArrow),
+        ),
         12.w.horizontalSpace,
         Text(
           title,
