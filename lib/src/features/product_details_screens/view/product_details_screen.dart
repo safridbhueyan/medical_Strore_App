@@ -125,7 +125,11 @@ class ProductDetailsScreen extends StatelessWidget {
                     15.h.verticalSpace,
                     CustomListTile(category: 'Similar Products'),
                     49.h.verticalSpace,
-                    CustomButton(),
+                    CustomButton(
+                      onTap: () {
+                        // addd to cart will go here
+                      },
+                    ),
                     SizedBox(height: 200.h),
                   ],
                 ),
