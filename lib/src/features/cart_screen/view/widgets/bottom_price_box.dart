@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/utils.dart';
 import 'package:medical_store_app/core/theme/theme_extension/app_colors.dart';
+import 'package:medical_store_app/src/checkout_screen.dart/view/checkout_screen.dart';
 import 'package:medical_store_app/src/features/cart_screen/view/widgets/custom_order_button.dart';
 import 'package:medical_store_app/src/features/order_overview_screen/view/widgets/custom_price_tile.dart';
-import 'package:medical_store_app/src/features/product_details_screens/view/widgets/custom_button.dart';
 
 class BottomPriceBox extends StatelessWidget {
   const BottomPriceBox({super.key});
@@ -81,25 +83,30 @@ class BottomPriceBox extends StatelessWidget {
             title: '',
             onTap: () {},
             isCustomModeOn: true,
-            child: Container(
-              padding: EdgeInsets.all(10.r),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.r),
-                color: AppColors.onPrimary,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("৳1,000"),
-                  10.w.horizontalSpace,
-                  Container(
-                    height: 28.h,
-                    color: AppColors.onSurface,
-                    width: 1.4,
-                  ),
-                  10.w.horizontalSpace,
-                  Text("Checkout Process"),
-                ],
+            child: GestureDetector(
+              onTap: () {
+                Get.to(CheckoutScreen());
+              },
+              child: Container(
+                padding: EdgeInsets.all(10.r),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.r),
+                  color: AppColors.onPrimary,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("৳1,000"),
+                    10.w.horizontalSpace,
+                    Container(
+                      height: 28.h,
+                      color: AppColors.onSurface,
+                      width: 1.4,
+                    ),
+                    10.w.horizontalSpace,
+                    Text("Checkout Process"),
+                  ],
+                ),
               ),
             ),
           ),
