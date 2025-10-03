@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:medical_store_app/core/constant/icons.dart';
 import 'package:medical_store_app/core/constant/padding.dart';
 import 'package:medical_store_app/core/theme/theme_extension/app_colors.dart';
+import 'package:medical_store_app/src/features/cart_screen/view/cart_screen.dart';
 import 'package:medical_store_app/src/features/product_details_screens/controller/count_controller.dart';
 import 'package:medical_store_app/src/features/product_details_screens/view/widgets/color_selection_tile.dart';
 import 'package:medical_store_app/src/features/product_details_screens/view/widgets/custom_button.dart';
@@ -34,7 +35,12 @@ class ProductDetailsScreen extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 40.h),
-            Appbar(title: "", onTap: () {}),
+            Appbar(
+              title: "",
+              onTap: () {
+                Get.to(CartScreen());
+              },
+            ),
             SizedBox(height: 22.h),
             Expanded(
               child: SingleChildScrollView(

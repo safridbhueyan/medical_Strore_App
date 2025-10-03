@@ -6,10 +6,13 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:medical_store_app/core/constant/icons.dart';
 import 'package:medical_store_app/core/theme/theme_extension/app_colors.dart';
+import 'package:medical_store_app/src/features/shop_Screen/controller/medicineList_controller.dart';
 
 class Appbar extends StatelessWidget {
   final String title;
-  void Function()? onTap;
+  final void Function()? onTap;
+  final MedicinelistController controller = Get.put(MedicinelistController());
+
   Appbar({super.key, required this.title, required this.onTap});
 
   @override
@@ -32,7 +35,35 @@ class Appbar extends StatelessWidget {
         Spacer(),
         GestureDetector(
           onTap: onTap,
-          child: SvgPicture.asset(AppIcons.shoppingIcon),
+          child: Obx(
+            () => Stack(
+              clipBehavior: Clip.none,
+              children: [
+                SvgPicture.asset(AppIcons.shoppingIcon),
+                if (controller.addList.isNotEmpty)
+                  Positioned(
+                    top: -10,
+                    right: -4,
+                    child: Container(
+                      padding: EdgeInsets.all(3),
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.red,
+                      ),
+                      child: Center(
+                        child: Text(
+                          controller.addList.length.toString(),
+                          style: style.bodyMedium!.copyWith(
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.onSurface,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+          ),
         ),
       ],
     );
