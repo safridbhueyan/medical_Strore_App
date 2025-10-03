@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:medical_store_app/core/constant/padding.dart';
 import 'package:medical_store_app/core/theme/theme_extension/app_colors.dart';
+import 'package:medical_store_app/src/checkout_screen.dart/view/widgets/custom_input_decoration.dart';
 import 'package:medical_store_app/src/checkout_screen.dart/view/widgets/custom_radio_tile.dart';
 import 'package:medical_store_app/src/common_widgets/Custom_appbar.dart';
 import 'package:medical_store_app/src/features/cart_screen/view/widgets/custom_order_button.dart';
@@ -56,24 +57,21 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     13.h.verticalSpace,
 
                     FormBuilderTextField(
+                      key: _formKey,
                       name: 'Your Name',
-                      decoration: const InputDecoration(labelText: 'Your Name'),
+                      decoration: inputdecore(text: "Your Name"),
                     ),
                     13.h.verticalSpace,
 
                     FormBuilderTextField(
                       name: 'Phone Number',
-                      decoration: const InputDecoration(
-                        labelText: 'Phone Number',
-                      ),
+                      decoration: inputdecore(text: 'Phone Number'),
                     ),
                     13.h.verticalSpace,
 
                     FormBuilderTextField(
                       name: 'Mail Address',
-                      decoration: const InputDecoration(
-                        labelText: 'Mail Address',
-                      ),
+                      decoration: inputdecore(text: 'Mail Address'),
                     ),
 
                     20.h.verticalSpace,
@@ -94,9 +92,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
 
                     FormBuilderTextField(
                       name: 'Home/Office',
-                      decoration: const InputDecoration(
-                        labelText: 'Home/Office',
-                      ),
+                      decoration: inputdecore(text: 'Home/Office'),
                     ),
                     10.h.verticalSpace,
                     SizedBox(
@@ -104,7 +100,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       child: FormBuilderTextField(
                         maxLines: 4,
                         name: 'Office',
-                        decoration: const InputDecoration(labelText: ''),
+                        decoration: inputdecore(),
                       ),
                     ),
 
@@ -156,7 +152,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
 
                     FormBuilderTextField(
                       name: 'Voucher/Coupon',
-                      decoration: const InputDecoration(labelText: ''),
+                      decoration: inputdecore(),
                     ),
 
                     20.h.verticalSpace,

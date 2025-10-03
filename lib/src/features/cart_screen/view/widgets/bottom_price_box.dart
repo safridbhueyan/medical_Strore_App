@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/utils.dart';
+import 'package:medical_store_app/core/constant/icons.dart';
 import 'package:medical_store_app/core/theme/theme_extension/app_colors.dart';
 import 'package:medical_store_app/src/checkout_screen.dart/view/checkout_screen.dart';
+import 'package:medical_store_app/src/checkout_screen.dart/view/widgets/custom_input_decoration.dart';
 import 'package:medical_store_app/src/features/cart_screen/view/widgets/custom_order_button.dart';
 import 'package:medical_store_app/src/features/order_overview_screen/view/widgets/custom_price_tile.dart';
 
@@ -31,8 +33,9 @@ class BottomPriceBox extends StatelessWidget {
               Expanded(
                 flex: 3,
                 child: TextFormField(
-                  decoration: InputDecoration(
-                    hintText: "Apply promo code",
+                  decoration: inputdecore(
+                    icon: AppIcons.down,
+                    hintext: "Apply promo code",
                     hintStyle: style.bodyMedium!.copyWith(
                       fontSize: 15.sp,
                       color: AppColors.onSurface,
