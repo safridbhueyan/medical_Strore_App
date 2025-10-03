@@ -11,6 +11,7 @@ class CustomContaier extends StatelessWidget {
   final String quantity;
   final String price;
   final void Function()? onTap;
+  final void Function()? onTapToaddToCart;
 
   const CustomContaier({
     super.key,
@@ -21,6 +22,7 @@ class CustomContaier extends StatelessWidget {
     required this.quantity,
     required this.price,
     required this.onTap,
+    required this.onTapToaddToCart,
   });
 
   @override
@@ -133,7 +135,7 @@ class CustomContaier extends StatelessWidget {
                           ),
                         ),
                   Spacer(),
-                  CustomAddToCurtButton(onTap: () {}),
+                  CustomAddToCurtButton(onTap: onTapToaddToCart),
                 ],
               ),
             ),

@@ -127,7 +127,11 @@ class ProductDetailsScreen extends StatelessWidget {
                     49.h.verticalSpace,
                     CustomButton(
                       onTap: () {
-                        // addd to cart will go here
+                        if (controller.isInCart(id) != true) {
+                          controller.addToCart(id);
+                        } else {
+                          //increament will work here
+                        }
                       },
                     ),
                     SizedBox(height: 200.h),

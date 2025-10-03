@@ -1,11 +1,32 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:medical_store_app/core/constant/images.dart';
 import 'package:medical_store_app/core/theme/theme_extension/app_colors.dart';
 import 'package:medical_store_app/src/features/cart_screen/view/widgets/vertical_count_tile.dart';
 
 class CustomInfoTile extends StatelessWidget {
-  const CustomInfoTile({super.key});
+  final String name;
+  final String brandName;
+  final String category;
+  final String sizeDetails;
+  final String price;
+  final String img;
+  final VoidCallback increament;
+  final VoidCallback decreament;
+  final String count;
+  const CustomInfoTile({
+    super.key,
+    required this.name,
+    required this.brandName,
+    required this.category,
+    required this.sizeDetails,
+    required this.price,
+    required this.img,
+    required this.increament,
+    required this.decreament,
+    required this.count,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +45,7 @@ class CustomInfoTile extends StatelessWidget {
             padding: EdgeInsets.only(top: 11.h, bottom: 11.h, left: 9.w),
             child: ClipRRect(
               borderRadius: BorderRadiusGeometry.circular(10.r),
-              child: Image.asset(
-                AppImages.diabeticKit,
-                width: 86.w,
-                height: 102.h,
-              ),
+              child: Image.asset(img, width: 86.w, height: 102.h),
             ),
           ),
 
@@ -38,7 +55,7 @@ class CustomInfoTile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Stethoscope",
+                  name,
                   style: style.bodyMedium!.copyWith(
                     fontWeight: FontWeight.w600,
                     color: AppColors.textColor,
@@ -47,7 +64,7 @@ class CustomInfoTile extends StatelessWidget {
                 6.h.verticalSpace,
 
                 Text(
-                  "Brand Name",
+                  brandName,
                   style: style.bodyMedium!.copyWith(
                     fontSize: 13.sp,
 
@@ -58,7 +75,7 @@ class CustomInfoTile extends StatelessWidget {
                 5.h.verticalSpace,
 
                 Text(
-                  "Category",
+                  category,
                   style: style.bodyMedium!.copyWith(
                     fontSize: 13.sp,
 
@@ -69,7 +86,7 @@ class CustomInfoTile extends StatelessWidget {
                 6.h.verticalSpace,
 
                 Text(
-                  "Size Details",
+                  sizeDetails,
 
                   style: style.bodyMedium!.copyWith(
                     fontSize: 13.sp,
@@ -81,7 +98,7 @@ class CustomInfoTile extends StatelessWidget {
                 5.h.verticalSpace,
 
                 Text(
-                  "৳ 5000",
+                  price,
                   style: style.titleSmall!.copyWith(
                     color: AppColors.onPrimary,
                     fontWeight: FontWeight.w400,
@@ -91,7 +108,11 @@ class CustomInfoTile extends StatelessWidget {
             ),
           ),
           Spacer(),
-          VerticalCountTile(),
+          VerticalCountTile(
+            increament: increament,
+            decreament: decreament,
+            count: count,
+          ),
         ],
       ),
     );

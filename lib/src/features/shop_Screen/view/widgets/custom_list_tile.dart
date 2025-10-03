@@ -36,6 +36,10 @@ class CustomListTile extends StatelessWidget {
                   debugPrint("\n\n\n ${controllers[index].id}\n\n\n\n");
                   Get.to(() => ProductDetailsScreen(id: controllers[index].id));
                 },
+                onTapToaddToCart: () {
+                  controller.addToCart(controllers[index].id);
+                  debugPrint("\n\n\n\n${controller.addList.length.toString()}");
+                },
               ),
             );
           },

@@ -3,6 +3,8 @@ import 'package:medical_store_app/core/constant/images.dart';
 import 'package:medical_store_app/src/features/shop_Screen/model/medicine_model.dart';
 
 class MedicinelistController extends GetxController {
+  RxList<MedicineModel> addList = <MedicineModel>[].obs;
+
   RxList<MedicineModel> medicine = <MedicineModel>[
     MedicineModel(
       name: "Paracetamol",
@@ -182,5 +184,35 @@ class MedicinelistController extends GetxController {
 
   MedicineModel? getByID(int id) {
     return medicine.firstWhereOrNull((m) => m.id == id);
+  }
+
+  void addToCart(int id) {
+    final item = getByID(id);
+
+    if (item != null) {
+      if (!addList.any((m) => m.id == item.id)) {
+        addList.add(item);
+      }
+    }
+  }
+
+  void removeFromCart(int id) {
+    addList.removeWhere((m) => m.id == id);
+  }
+
+  bool isInCart(int id) {
+    return addList.any((m) => m.id == id);
+  }
+
+  void updateTheItemCount(int id, int newCount) {
+    final index = addList.indexWhere((m) => m.id == id);
+    if (index != -1) {
+      if (newCount <= 0) {
+        addList.removeAt(index);
+      } else {
+        addList[index].cartQuantity = newCount;
+        addList.refresh();
+      }
+    }
   }
 }

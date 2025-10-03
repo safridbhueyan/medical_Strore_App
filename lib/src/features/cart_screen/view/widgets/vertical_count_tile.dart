@@ -1,9 +1,19 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medical_store_app/core/theme/theme_extension/app_colors.dart';
 
 class VerticalCountTile extends StatelessWidget {
-  const VerticalCountTile({super.key});
+  void Function()? increament;
+  void Function()? decreament;
+  final String count;
+  VerticalCountTile({
+    super.key,
+    required this.count,
+    required this.increament,
+    required this.decreament,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +36,7 @@ class VerticalCountTile extends StatelessWidget {
         children: [
           Spacer(),
           GestureDetector(
-            onTap: () {
-              //  count.decreament();
-            },
+            onTap: decreament,
             child: Center(
               child: Icon(Icons.remove, color: AppColors.onPrimary),
             ),
@@ -40,7 +48,7 @@ class VerticalCountTile extends StatelessWidget {
 
           Text(
             //  count.count.toString(),
-            "2",
+            count,
             style: style.bodyMedium!.copyWith(color: AppColors.black),
           ),
           Spacer(),
@@ -48,9 +56,7 @@ class VerticalCountTile extends StatelessWidget {
           Spacer(),
 
           GestureDetector(
-            onTap: () {
-              //  count.increament();
-            },
+            onTap: increament,
             child: Center(child: Icon(Icons.add, color: AppColors.onPrimary)),
           ),
           Spacer(),
