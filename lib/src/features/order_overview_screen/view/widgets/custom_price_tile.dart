@@ -7,12 +7,14 @@ class CustomPriceTile extends StatelessWidget {
   final String price;
   final FontWeight? fontWeight;
   final double? size;
+  final Color? color;
   const CustomPriceTile({
     super.key,
     required this.price,
     required this.title,
     this.fontWeight,
     this.size,
+    this.color,
   });
 
   @override
@@ -25,7 +27,7 @@ class CustomPriceTile extends StatelessWidget {
             Text(
               title,
               style: style.bodyMedium!.copyWith(
-                color: AppColors.textColor,
+                color: color ?? AppColors.textColor,
                 fontWeight: fontWeight ?? FontWeight.w400,
               ),
             ),
@@ -34,7 +36,7 @@ class CustomPriceTile extends StatelessWidget {
               price,
               style: style.bodyMedium!.copyWith(
                 fontWeight: FontWeight.w600,
-                color: AppColors.textColor,
+                color: color ?? AppColors.textColor,
                 fontSize: size ?? 15.sp,
               ),
             ),
