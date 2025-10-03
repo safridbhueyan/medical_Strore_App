@@ -16,6 +16,7 @@ class VerticalCountTile extends StatelessWidget {
             color: AppColors.deActiveTextColor.withValues(alpha: 0.3),
           ),
         ),
+        color: AppColors.onSurface,
       ),
       height: 145.h,
       width: 50.w,
