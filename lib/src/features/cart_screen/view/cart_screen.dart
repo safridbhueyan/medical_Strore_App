@@ -7,10 +7,13 @@ import 'package:medical_store_app/core/theme/theme_extension/app_colors.dart';
 import 'package:medical_store_app/src/common_widgets/Custom_appbar.dart';
 import 'package:medical_store_app/src/features/cart_screen/view/widgets/bottom_price_box.dart';
 import 'package:medical_store_app/src/features/cart_screen/view/widgets/custom_info_tile.dart';
+import 'package:medical_store_app/src/features/product_details_screens/controller/count_controller.dart';
 import 'package:medical_store_app/src/features/shop_Screen/controller/medicineList_controller.dart';
 
 class CartScreen extends StatelessWidget {
   final MedicinelistController controller = Get.put(MedicinelistController());
+  final CountController count = Get.put(CountController());
+
   CartScreen({super.key});
 
   @override
@@ -122,35 +125,6 @@ class CartScreen extends StatelessWidget {
                         );
                       },
                     ),
-
-                    // Padding(
-                    //   padding: AppPadding.screenHorizontal,
-                    //   child: Slidable(
-                    //     key: ValueKey(1),
-                    //     endActionPane: ActionPane(
-                    //       motion: ScrollMotion(),
-                    //       children: [
-                    //         SlidableAction(
-                    //           spacing: 2,
-                    //           padding: EdgeInsets.only(right: 80.w),
-                    //           onPressed: (context) {},
-                    //           backgroundColor: AppColors.onPrimary,
-                    //           foregroundColor: Colors.white,
-                    //           icon: Icons.delete_outline,
-                    //           label: 'Delete',
-                    //         ),
-                    //       ],
-                    //     ),
-                    //     child: CustomInfoTile(
-                    //       img: controller.addList[0].img,
-                    //       name: controller.addList[0].name,
-                    //       brandName: 'Brand Name',
-                    //       category: controller.addList[0].catagory,
-                    //       sizeDetails: controller.addList[0].quantity,
-                    //       price: controller.addList[0].price,
-                    //     ),
-                    //   ),
-                    // ),
                   ],
                 ),
               ),

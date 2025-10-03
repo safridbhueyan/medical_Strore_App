@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:medical_store_app/core/constant/icons.dart';
 import 'package:medical_store_app/core/constant/padding.dart';
 import 'package:medical_store_app/core/theme/theme_extension/app_colors.dart';
+import 'package:medical_store_app/src/features/product_details_screens/controller/count_controller.dart';
 import 'package:medical_store_app/src/features/product_details_screens/view/widgets/color_selection_tile.dart';
 import 'package:medical_store_app/src/features/product_details_screens/view/widgets/custom_button.dart';
 import 'package:medical_store_app/src/features/product_details_screens/view/widgets/custom_expension_tile.dart';
@@ -18,6 +19,8 @@ import 'package:medical_store_app/src/features/shop_Screen/view/widgets/custom_l
 class ProductDetailsScreen extends StatelessWidget {
   final int id;
   final MedicinelistController controller = Get.put(MedicinelistController());
+  final CountController count = Get.put(CountController());
+
   ProductDetailsScreen({super.key, required this.id});
 
   @override
@@ -130,7 +133,10 @@ class ProductDetailsScreen extends StatelessWidget {
                         if (controller.isInCart(id) != true) {
                           controller.addToCart(id);
                         } else {
-                          //increament will work here
+                          controller.updateTheItemCount(
+                            id,
+                            count.count.toInt(),
+                          );
                         }
                       },
                     ),

@@ -11,7 +11,8 @@ class CountButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final style = Theme.of(context).textTheme;
-    final CountController count = Get.put(CountController());
+    final CountController count = Get.find<CountController>();
+
     return Container(
       width: 126.w,
       padding: EdgeInsets.only(left: 5.w, right: 5.w),
