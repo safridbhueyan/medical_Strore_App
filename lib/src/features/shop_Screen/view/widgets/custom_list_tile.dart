@@ -14,7 +14,7 @@ class CustomListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(
       () => SizedBox(
-        height: 177.h,
+        height: 180.h,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: count ?? controller.getByCategory(category).length,
